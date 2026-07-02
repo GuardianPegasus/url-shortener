@@ -49,8 +49,10 @@ class LinkResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('short_code')
                     ->label('Короткая ссылка')
-                    ->formatStateUsing(fn ($state) => url('/' . $state))
-                    ->copyable(),
+                    ->formatStateUsing(fn (string $state): string => url($state))
+                    ->copyable()
+                    ->copyableState(fn (string $state): string => url($state))
+                    ->url(fn (string $state): string => url($state), shouldOpenInNewTab: true),
                 Tables\Columns\TextColumn::make('clicks_count')
                     ->counts('clicks')
                     ->label('Переходы'),
