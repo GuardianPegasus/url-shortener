@@ -35,7 +35,7 @@ docker run --rm \
     -v "$(pwd):/var/www/html" \
     -w /var/www/html \
     laravelsail/php83-composer:latest \
-    composer install --ignore-platform-reqs
+    composer install
 ```
 4. Запустите Docker-контейнеры через Laravel Sail:
 ```bash
