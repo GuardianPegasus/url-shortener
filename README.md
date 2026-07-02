@@ -21,25 +21,24 @@
 
 1. Клонируйте репозиторий:
 ```bash
-   git clone https://github.com/GuardianPegasus/url-shortener
-   cd url-shortener
+git clone https://github.com/GuardianPegasus/url-shortener
+cd url-shortener
 ```
 2. Создайте файл окружения:
 ```bash
-    cp .env.example .env
+cp .env.example .env
 ```
 3. Запустите Docker-контейнеры через Laravel Sail:
 ```bash
-    ./vendor/bin/sail up -d
+./vendor/bin/sail up -d
 ```
 4. Установите зависимости и сгенерируйте ключ:
 ```bash
-    ./vendor/bin/sail composer install
-    ./vendor/bin/sail artisan key:generate
+./vendor/bin/sail composer install
+./vendor/bin/sail artisan key:generate
 ```
 5. Накатите миграции:
 ```bash
-    ./vendor/bin/sail artisan migrate
+./vendor/bin/sail artisan migrate
 ```
-6. Вход в систему:
-    Перейдите по адресу "http://localhost/admin", нажмите Sign up и создайте аккаунт.
+6. Перейдите по адресу "http://localhost/admin", нажмите Sign up и создайте аккаунт.
