@@ -22,27 +22,32 @@
 1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/GuardianPegasus/url-shortener
-```
-```bash
 cd url-shortener
 ```
 2. Создайте файл окружения:
 ```bash
 cp .env.example .env
 ```
-3. Запустите Docker-контейнеры через Laravel Sail:
+3. Установите зависимости Composer:
+```bash
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php83-composer:latest \
+    composer install --ignore-platform-reqs
+```
+4. Запустите Docker-контейнеры через Laravel Sail:
 ```bash
 ./vendor/bin/sail up -d
 ```
-4. Установите зависимости и сгенерируйте ключ:
+5. Установите зависимости и сгенерируйте ключ:
 ```bash
 ./vendor/bin/sail composer install
-```
-```bash
 ./vendor/bin/sail artisan key:generate
 ```
-5. Накатите миграции:
+6. Накатите миграции:
 ```bash
 ./vendor/bin/sail artisan migrate
 ```
-6. Перейдите по адресу "http://localhost/admin", нажмите Sign up и создайте аккаунт.
+7. Перейдите по адресу "http://localhost/admin", нажмите Sign up и создайте аккаунт.
