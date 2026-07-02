@@ -50,4 +50,4 @@ docker run --rm \
 ```bash
 ./vendor/bin/sail artisan migrate
 ```
-7. Перейдите по адресу "http://localhost/admin", нажмите Sign up и создайте аккаунт.
+7. Перейдите по адресу "http://localhost/admin", нажмите зарегистироваться и создайте аккаунт.
