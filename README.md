@@ -20,24 +20,26 @@
 ## Как запустить проект локально
 
 1. Клонируйте репозиторий:
+```bash
    git clone https://github.com/GuardianPegasus/url-shortener
    cd url-shortener
-
+```
 2. Создайте файл окружения:
+```bash
     cp .env.example .env
-
+```
 3. Запустите Docker-контейнеры через Laravel Sail:
+```bash
     ./vendor/bin/sail up -d
-    
-    # Или через стандартный docker compose, если запускаете на Windows без WSL:
-    docker compose up -d
-
+```
 4. Установите зависимости и сгенерируйте ключ:
+```bash
     ./vendor/bin/sail composer install
     ./vendor/bin/sail artisan key:generate
-
+```
 5. Накатите миграции:
+```bash
     ./vendor/bin/sail artisan migrate
-
+```
 6. Вход в систему:
     Перейдите по адресу "http://localhost/admin", нажмите Sign up и создайте аккаунт.
