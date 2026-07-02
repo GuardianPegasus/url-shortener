@@ -22,6 +22,8 @@
 1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/GuardianPegasus/url-shortener
+```
+```bash
 cd url-shortener
 ```
 2. Создайте файл окружения:
@@ -35,6 +37,8 @@ cp .env.example .env
 4. Установите зависимости и сгенерируйте ключ:
 ```bash
 ./vendor/bin/sail composer install
+```
+```bash
 ./vendor/bin/sail artisan key:generate
 ```
 5. Накатите миграции:
